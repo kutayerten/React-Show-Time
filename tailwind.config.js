@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         primary: '#32445a'
+      },
+      fontSize: {
+        15: '0.938rem'
       }
     },
   },

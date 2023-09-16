@@ -5,6 +5,11 @@ import Category from "~/pages/category";
 import Discover from "~/pages/discover";
 import Home from "~/pages/home";
 import LectureRequests from "~/pages/lecture-requests";
+import QADashboard from "~/pages/qa";
+import Categories from "~/pages/qa/categories";
+import PopularQuestions from "~/pages/qa/popular-questions";
+import UnansweredQuestions from "~/pages/qa/unanswered-questions";
+import UnsolvedQuestions from "~/pages/qa/unsolved-questions";
 
 const routes = createBrowserRouter([
   {
@@ -28,9 +33,31 @@ const routes = createBrowserRouter([
         element: <LectureRequests />
       },
       {
+        path: '/soru-cevap',
+        element: <QADashboard />
+      },
+      {
+        path: '/cevaplanmamis-sorular',
+        element: <UnansweredQuestions />
+      },
+      {
+        path: '/cozulmemis-sorular',
+        element: <UnsolvedQuestions />
+      },
+      {
+        path: '/kategoriler',
+        element: <Categories />
+      },
+      {
+        path: '/populer-sorular',
+        element: <PopularQuestions />
+      },
+      
+      
+      {
         path: '/:categorySlug',
         element: <Category />
-      }
+      } 
     ]
   }
 ])
