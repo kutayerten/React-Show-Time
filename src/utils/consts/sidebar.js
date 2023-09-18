@@ -41,7 +41,7 @@ export const QA_SIDEBAR_MENU = [
         title : 'Kategoriler'
     },
     {
-        path: '/popular-sorular',
+        path: '/populer-sorular',
         title : 'Populer Sorular'
     }
 

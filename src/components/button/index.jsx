@@ -6,8 +6,11 @@ export default function Button({ children, as, variant, size, ...props }) {
   return createElement(as, {
     ...props,
     className: classNames("h-10 flex items-center justify-center rounded", {
-      "bg-primary text-white font-medium": variant === 'primary',
-      "px-5": size === 'normal'
+      "bg-primary dark:bg-blue-500 text-white": variant === 'primary',
+      "bg-white text-black": variant === 'default',
+      "bg-blue-700 text-white": variant === 'light',
+      "bg-gray-900 text-white": variant === 'dark',
+      "px-5 font-medium": size === 'normal '
     })
   }, children)
 }

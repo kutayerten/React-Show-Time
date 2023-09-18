@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import MenuItem from "./item"
 
 export default function SidebarMenu({menu}){
     return(

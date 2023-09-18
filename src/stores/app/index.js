@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     sidebarType: 'app',
     language: 'tr',
-    theme: 'default'
+    theme: localStorage.getItem('theme') || 'default'
 }
 
 const app = createSlice({
@@ -18,6 +18,8 @@ const app = createSlice({
         },
         _setTheme: (state, action) => {
             state.theme = action.payload
+            localStorage.setItem('theme', action.payload)
+           
         }
 
     }
