@@ -1,0 +1,7 @@
+{
+    "apperance":{
+        "default": "System",
+        "dark": "Dunkel",
+        "light": "Licht"
+    }
+}
