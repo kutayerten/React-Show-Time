@@ -7,6 +7,7 @@ export default function Button({ children, as, variant, size, className, ...prop
     ...props,
     className: classNames(" inline-flex items-center justify-center rounded", {
       "bg-primary dark:bg-blue-500 text-white": variant === 'primary',
+      "bg-transparent border border-primary dark:border-zinc-500 text-primary dark:text-primary": variant === 'primary-outline',
       "bg-white text-primary": variant === 'default',
       "bg-white text-primary": variant === 'light',
       "bg-gray-900 text-white": variant === 'dark',
@@ -19,7 +20,7 @@ export default function Button({ children, as, variant, size, className, ...prop
 
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  variant: PropTypes.oneOf(['primary', 'light']),
+  variant: PropTypes.oneOf(['primary', 'primary-outline', 'light']),
   size: PropTypes.oneOf(['normal', 'small', 'large']),
   as: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   props: PropTypes.object,
