@@ -8,6 +8,7 @@ export default function MenuItem({ item }){
     
    return(
     <NavLink 
+    end={true}
     to={item.path}
     onClick={item?.onClick}
     className={({isActive}) => classNames("px-3 h-9 flex dark:hover:bg-zinc-50/20 hover:bg-zinc-100 items-center rounded text-15 font-medium transition-colors",{

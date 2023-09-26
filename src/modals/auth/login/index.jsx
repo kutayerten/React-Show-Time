@@ -3,11 +3,12 @@ import Button from "~/components/button";
 import Input from "~/components/input";
 import ModalTitle from "~/components/modal/header";
 import Or from "~/components/or";
+import { setUser } from "~/stores/auth/actions";
 import { modal } from "~/stores/modal/actions";
 import { loginSchema } from "~/validations";
 
 
-export default function LoginModal(){
+export default function LoginModal({ destroy }){
     return(
         <>
            <ModalTitle 
@@ -20,8 +21,9 @@ export default function LoginModal(){
                     username: '',
                     password: ''
                 }}
-                onSubmit={(values,actions)=> {
-
+                onSubmit={ values => {
+                    setUser(values)
+                    destroy()
                 }}
                 >
 

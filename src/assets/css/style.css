@@ -24,3 +24,26 @@ body.dark{
 .swiper-pagination-bullet.swiper-pagination-bullet-active{
     @apply bg-primary dark:bg-white
 }
+
+/* Pagination */
+
+.pagination {
+    @apply flex items-center gap-x-1.5
+}
+.pagination .previous {
+    @apply mr-auto   
+}
+.pagination .next {
+    @apply ml-auto
+}
+.pagination li:not(.break) a {
+    @apply w-9 h-9 rounded-full border border-zinc-300 flex items-center justify-center text-sm text-zinc-500 font-semibold hover:border-zinc-600 hover:text-black
+}
+
+.pagination li.selected a{
+    @apply !bg-primary !border-primary !text-white
+}
+
+.pagination li.break{
+    @apply h-8 flex items-center text-zinc-400 pb-2
+}

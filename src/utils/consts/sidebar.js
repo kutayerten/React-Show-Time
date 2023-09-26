@@ -1,3 +1,5 @@
+import { removeUser } from "~/stores/auth/actions"
+
 export const SIDEBAR_MENU = [
     {
         path: '/',
@@ -54,12 +56,12 @@ export const PROFILE_SIDEBAR_MENU = [
         title: 'Profil'
     },
     {
-        path: '/takipciler',
+        path: '/profil/takipciler',
         title: 'Takipciler'
     },
     {
-        path: '/takip-edilenler',
-        title: 'Takip Edilenler'
+        path: '/profil/takip-ettiklerin',
+        title: 'Takip Ettiklerin'
     },
     {
         path: '/profil/sorular',
@@ -78,7 +80,7 @@ export const PROFILE_SIDEBAR_MENU = [
         title: 'Herkese Acik Profilin'
     },
     {
-        onClick: () => console.log('logout butonuna basildi'),
+        onClick: () => removeUser(),
         sensitive: true,
         title: 'Cikis Yap'
     }
