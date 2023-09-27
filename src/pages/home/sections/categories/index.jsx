@@ -14,7 +14,8 @@ export default function Categories(){
         <Slider
         slidesPerView={1}
         breakpoints={{
-          640: {
+          340: {
+            spaceBetween: 15,
             slidesPerView: 2
           },
           768: {

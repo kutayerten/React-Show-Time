@@ -12,7 +12,8 @@ export default function LastUsers(){
         >
           <Slider 
           breakpoints={{
-            640: {
+            340: {
+              spaceBetween:15,
               slidesPerView: 2
             },
             768: {

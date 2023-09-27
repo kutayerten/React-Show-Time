@@ -11,8 +11,8 @@ export default function Button({ children, as, variant, size, className, ...prop
       "bg-white text-primary": variant === 'default',
       "bg-white text-primary": variant === 'light',
       "bg-gray-900 text-white": variant === 'dark',
-      "px-5 font-medium h-10 text-15": size === 'normal',
-      "px-4 font-medium h-8 text-sm": size === 'small',
+      "px-5 font-medium h-10 text-sm md:text-15": size === 'normal',
+      "px-4 font-medium h-8 text-[13px] md:text-sm": size === 'small',
       [className]: !!className
     })
   }, children)

@@ -10,7 +10,7 @@ export default function Articles() {
    title="Makaleler"
    >
 
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid md:grid-cols-2 gap-4">
     {articles.map((article, key) => <ArticleCard item={article} key={key} />)}
     </div>
     <Pagination count={24}/>

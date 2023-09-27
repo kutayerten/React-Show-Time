@@ -38,7 +38,7 @@ function getSocialMediaDescription(type){
 
 export default function SocialCard({ type, ctaText , ctaUrl}){
     return(
-        <div className={classNames("px-10 py-5 rounded-md mb-10 text-white flex items-center gap-x-7",{
+        <div className={classNames("px-10 py-5 rounded-md mb-10 text-white flex flex-col md:flex-row md:items-center gap-y-5 gap-x-7",{
             "bg-[#1da1f2]": type === 'twitter',
             "bg-gradient-to-r from-[#405e6e] via-[#833ab4] to-[#e1306c]": type === 'instagram'
         })}>
@@ -46,8 +46,8 @@ export default function SocialCard({ type, ctaText , ctaUrl}){
             {getSocialMediaIcon(type)}
             </div>
             <div>
-                <h6 className="text-xl font-medium ">{getSocialMediaTitle(type)}</h6>
-                <p className="text-white/70 mb-3">{getSocialMediaDescription(type)}</p>
+                <h6 className="text-lg md:text-xl font-medium ">{getSocialMediaTitle(type)}</h6>
+                <p className="text-white/70 text-sm md:text-base mb-3 mt-2 md:mt-0">{getSocialMediaDescription(type)}</p>
                 <Button 
                 as="a"
                 target="_blank"

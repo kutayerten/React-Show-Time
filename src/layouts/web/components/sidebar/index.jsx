@@ -3,13 +3,20 @@ import SidebarMenu from "./components/menu"
 import { PROFILE_SIDEBAR_MENU, QA_SIDEBAR_MENU, SIDEBAR_MENU } from "~/utils/consts/sidebar"
 import Apperance from "./components/apperance"
 import Categories from "./components/categories"
+import { useBreakpoint } from "~/hooks/use-breakpoint"
+import classNames from "classnames"
 
 export default function Sidebar() {
 
+  const {breakpoint} = useBreakpoint()
   const type = useSidebarType()
 
   return (
-    <aside className="w-[250px] border-r border-zinc-200 h-[calc(100vh-3.5rem)] fixed top-[3.5rem] p-2 flex flex-col overflow-auto transition-colors dark:border-zinc-700">
+    <aside className={classNames(" h-[calc(100vh-3.5rem)] fixed top-[3.5rem] p-2 flex flex-col overflow-auto transition-colors dark:border-zinc-700",{
+      "w-[250px] border-r border-zinc-200": breakpoint === 'desktop',
+      "w-full bg-white/90 dark:bg-zinc-900 backdrop-blur z-10": breakpoint !== 'desktop',
+
+    })}>
      {type === 'app' && (
       <>
       

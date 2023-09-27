@@ -6,17 +6,21 @@ import { Link } from "react-router-dom";
 import { removeUser } from "~/stores/auth/actions.js";
 import { MdArrowDropDown } from "react-icons/md";
 import classNames from "classnames";
+import { useBreakpoint } from "~/hooks/use-breakpoint";
+import {FiUser} from "react-icons/fi";
 
 function UserMenu(){
+
   const user = useAuth()
+  
   return(
-    <Menu>
+    <Menu as="nav" className="relative">
       <Menu.Button className="flex items-center gap-x-2.5 text-15 font-medium">
       <img src="https://avatars.githubusercontent.com/u/58105141?v=4" alt=""
       className="w-8 h-8 rounded-full object-cover"
       />
       <div className="flex items-center dark:text-white">
-      @{user.username}
+      <span className="hidden md:block">@{user.username}</span>
       <MdArrowDropDown size={20} />
       </div>
       </Menu.Button>
@@ -139,11 +143,12 @@ function UserMenu(){
 
 export default function Auth() {
 
+  const {breakpoint} = useBreakpoint()
   const user = useAuth()
 
   return (
-    <div>
-     {!user && (
+    <>
+     {(!user && breakpoint === 'desktop') && (
        <Button 
        onClick={() => modal.append('auth.login',{
          name: 'Kutay',
@@ -153,7 +158,23 @@ export default function Auth() {
          Giriş yap
        </Button>
      )}
+
+{(!user && breakpoint !== 'desktop') && (
+       <button 
+       onClick={() => modal.append('auth.login',{
+         name: 'Kutay',
+         surname: 'Erten'
+       })}
+       type="button"
+       className="w-9 h-9 flex items-center justify-center"
+       >
+         <FiUser size={24}
+         className="text-black dark:text-white"
+         />
+       </button>
+     )}
+
      {user && <UserMenu/>}
-    </div>
+    </>
   )
 }
