@@ -15,9 +15,9 @@ function getSocialMediaIcon(type){
 function getSocialMediaTitle(type){
     switch(type){
         case 'twitter':
-            return <>Don't forget to subscribe <b>@kutayerten</b> on Twitter</>
+            return <>Don&#39;t forget to subscribe <b>@kutayerten</b> on Twitter</>
         case 'instagram':
-            return <>Don't forget to follow <b>@kutayertenn</b> on Instagram</>
+            return <>Don&#39;t forget to follow <b>@kutayertenn</b> on Instagram</>
     }
 
     

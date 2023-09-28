@@ -5,6 +5,8 @@ import Apperance from "./components/apperance"
 import Categories from "./components/categories"
 import { useBreakpoint } from "~/hooks/use-breakpoint"
 import classNames from "classnames"
+import { Suspense } from "react"
+import OpacityContent from "~/components/animated/opacity"
 
 export default function Sidebar() {
 
@@ -12,7 +14,7 @@ export default function Sidebar() {
   const type = useSidebarType()
 
   return (
-    <aside className={classNames(" h-[calc(100vh-3.5rem)] fixed top-[3.5rem] p-2 flex flex-col overflow-auto transition-colors dark:border-zinc-700",{
+    <OpacityContent className={classNames(" h-[calc(100vh-3.5rem)] fixed top-[3.5rem] p-2 flex flex-col overflow-auto transition-colors dark:border-zinc-700",{
       "w-[250px] border-r border-zinc-200": breakpoint === 'desktop',
       "w-full bg-white/90 dark:bg-zinc-900 backdrop-blur z-10": breakpoint !== 'desktop',
 
@@ -28,9 +30,11 @@ export default function Sidebar() {
     )}
      {type === 'qa' && <SidebarMenu menu = {QA_SIDEBAR_MENU}/>}
      {type === 'profile' && <SidebarMenu menu = {PROFILE_SIDEBAR_MENU}/>}
-    <Apperance />  
+   <Suspense fallback="..">
+   <Apperance /> 
+    </Suspense> 
     
-    </aside>
+    </OpacityContent>
   
   )
 }

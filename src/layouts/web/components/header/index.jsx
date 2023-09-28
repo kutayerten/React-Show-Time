@@ -6,7 +6,6 @@ import Search from "./search";
 import {HiMenuAlt2} from 'react-icons/hi'
 import { setSidebarVisibility } from "~/stores/app/actions";
 import { useSidebarVisibility } from "~/stores/app/hooks";
-import Sidebar from "../sidebar";
 
 export default function Header() {
 

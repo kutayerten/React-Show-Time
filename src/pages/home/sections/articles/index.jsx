@@ -1,9 +1,6 @@
-import { Link } from "react-router-dom";
 import Section from "~/components/section";
 import Slider from "~/components/slider";
-import { timeAgo } from "~/utils/date";
 import { articles as data } from "~/fake-api";
-import { getContrastColor } from "~/utils/helpers";
 import ArticleCard from "~/components/cards/article";
 
 

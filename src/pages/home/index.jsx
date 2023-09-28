@@ -4,12 +4,15 @@ import Articles from "./sections/articles";
 import Categories from "./sections/categories";
 import LastQuestions from "./sections/last-questions";
 import LastUsers from "./sections/last-users";
+import OpacityContent from "~/components/animated/opacity";
 
 
 
 export default function Home() {
   return (
-    <div className="max-w-[1200px] mx-auto">
+    <OpacityContent className="max-w-[1200px] mx-auto" >
+
+    {import.meta.env.MODE}
 
    <Categories />
     
@@ -27,6 +30,6 @@ export default function Home() {
 
     <LastUsers />
 
-    </div>
+    </OpacityContent>
   )
 }

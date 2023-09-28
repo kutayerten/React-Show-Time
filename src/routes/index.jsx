@@ -1,9 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "~/layouts";
 import AuthLayout from "~/layouts/auth";
 import WebLayout from "~/layouts/web";
 import Articles from "~/pages/articles";
-import ArticleDetail from "~/pages/articles/detail";
 import Category from "~/pages/category";
 import Discover from "~/pages/discover";
 import Home from "~/pages/home";

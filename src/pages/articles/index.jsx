@@ -1,3 +1,4 @@
+import OpacityContent from "~/components/animated/opacity";
 import ArticleCard from "~/components/cards/article/index.jsx";
 import Pagination from "~/components/pagination";
 import Section from "~/components/section/index.jsx";
@@ -5,7 +6,7 @@ import { articles } from "~/fake-api/index.js";
 
 export default function Articles() {
   return (
-   <div className="max-w-[1200px] mx-auto">
+   <OpacityContent className="max-w-[1200px] mx-auto">
     <Section 
    title="Makaleler"
    >
@@ -16,7 +17,7 @@ export default function Articles() {
     <Pagination count={24}/>
 
     </Section>
-   </div>
+   </OpacityContent>
      
     
   )

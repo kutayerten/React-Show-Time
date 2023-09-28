@@ -41,7 +41,7 @@ CategoryCard.propTypes= {
         icon: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         articleCount: PropTypes.number,
-        videoCOunt: PropTypes.number
+        videoCount: PropTypes.number
 
     })
 }

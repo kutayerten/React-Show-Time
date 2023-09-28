@@ -9,6 +9,7 @@ import Modals from "~/modals";
 import { useBreakpoint } from "~/hooks/use-breakpoint";
 import classNames from "classnames";
 import { setSidebarVisibility } from "~/stores/app/actions";
+import { AnimatePresence } from "framer-motion";
 
 export default function WebLayout() {
 
@@ -58,10 +59,14 @@ export default function WebLayout() {
   return (
     <>
     <ScrollRestoration/>
+    <AnimatePresence>
     {modals.length > 0 && <Modals />}
+    </AnimatePresence>
       <Header />
       
-        {sidebarVisibility && <Sidebar />}
+       <AnimatePresence>
+       {sidebarVisibility && <Sidebar />}
+       </AnimatePresence>
      
       
       <main className={classNames("p-4 md:p-6 mt-14 dark:text-white",{

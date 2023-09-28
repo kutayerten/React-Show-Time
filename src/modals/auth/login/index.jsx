@@ -6,7 +6,7 @@ import Or from "~/components/or";
 import { setUser } from "~/stores/auth/actions";
 import { modal } from "~/stores/modal/actions";
 import { loginSchema } from "~/validations";
-
+import PropTypes from "prop-types";
 
 export default function LoginModal({ destroy }){
     return(
@@ -46,4 +46,8 @@ export default function LoginModal({ destroy }){
           
         </>
     )
+}
+
+LoginModal.propTypes = {
+    destroy: PropTypes.func
 }

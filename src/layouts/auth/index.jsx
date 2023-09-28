@@ -12,7 +12,7 @@ export default function AuthLayout({ children }){
                 replace:true
             })
         }
-    },[user])
+    },[user, redirect])
 
     if (user){
         return children
